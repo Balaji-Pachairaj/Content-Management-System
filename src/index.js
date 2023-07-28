@@ -4,6 +4,15 @@ import "./index.css";
 
 // Router packages
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Signin from "./Pages/Login/Signin";
+import Signup from "./Pages/Login/Signup";
+import CreatePassword from "./Pages/Login/CreatePassword";
+import SuccefullPassword from "./Pages/Login/SuccefullPassword";
+import ForgetPassword from "./components/Login/password/ForgetPasswordContent";
+import CheckEmail from "./Pages/Login/CheckEmail";
+import ResetPassword from "./Pages/Login/ResetPassword";
+import SuccessfullResetPassword from "./Pages/Login/SuccessfullResetPassword";
+import Post from "./Pages/DashBoard/post/Post";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -17,12 +26,41 @@ const router = createBrowserRouter([
      {
           //Sign in => login form for existing user
           path: "/signin",
-          element: <p className=" text-center">sign in </p>,
+          element: <Signin />,
      },
      {
           //Sign up => login form for New user
           path: "/signup",
-          element: <p className=" text-center">sign up </p>,
+          element: <Signup />,
+     },
+     {
+          path: "/createpassword",
+          element: <CreatePassword />,
+     },
+     {
+          path: "/successfullpassword",
+          element: <SuccefullPassword />,
+     },
+     {
+          path: "/forgetpassword",
+          element: <ForgetPassword />,
+     },
+     {
+          path: "/checkemail",
+          element: <CheckEmail />,
+     },
+     {
+          path: "/resetpassword",
+          element: <ResetPassword />,
+     },
+     {
+          path: "/successfulresetpassword",
+          element: <SuccessfullResetPassword />,
+     },
+
+     {
+          path: "/dashboard/posts",
+          element: <Post />,
      },
 ]);
 
@@ -31,8 +69,3 @@ root.render(
           <RouterProvider router={router} />
      </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
